@@ -1,0 +1,16 @@
+{
+    "name": "bobur/exam",
+    "description": "exam 2",
+    "autoload": {
+        "psr-4": {
+            "Exam\\": "src/"
+        },
+        "classmap": [
+            "."
+        ]
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^7.0",
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
