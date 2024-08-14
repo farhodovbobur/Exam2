@@ -25,7 +25,6 @@ class Users
     public function getUser(int $userId)
     {
         return $this->pdo->query("SELECT * FROM users WHERE user_id = {$userId}")->fetch();
-
     }
 
     public function getAllUsers(): false|array

@@ -13,7 +13,7 @@ class Posts
         $this->pdo = DB::connect();
     }
 
-    public function insertPost(string $post)
+    public function insertPost(string $post): bool
     {
         $query = "INSERT INTO posts (post, created_at) VALUES (:post, NOW())";
         $stmt = $this->pdo->prepare($query);
@@ -21,8 +21,8 @@ class Posts
         return $stmt->execute();
     }
 
-    public function getPost()
+    public function getAllPosts(): false|array
     {
-        return $this->pdo->query("SELECT * FROM posts")->fetch();
+        return $this->pdo->query("SELECT * FROM posts")->fetchAll();
     }
 }
